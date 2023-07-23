@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Muli", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #17202a;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  color: white;
+  flex-direction: column;
+}
+.title {
+  position: absolute;
+  top: 0;
+}
+.container {
+  display: flex;
+  width: 100vw;
+}
+
+.panel {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 85vh;
+  border-radius: 50px;
+  color: #fff;
+  cursor: pointer;
+  flex: 0.5;
+  margin: 10px;
+  position: relative;
+  -webkit-transition: all 650ms ease-in;
+}
+
+.panel h3 {
+  font-size: 24px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  margin: 0;
+  opacity: 0;
+}
+
+.panel.active {
+  flex: 5;
+}
+
+.panel.active h3 {
+  opacity: 1;
+  transition: opacity 0.3s ease-in 0.4s;
+}
+
+.panel p {
+  font-size: 15px;
+  position: absolute;
+  bottom: 20px;
+  margin: 0;
+  opacity: 0;
+}
+.panel.active p {
+  transition: opacity 0.3s ease-in 0.4s;
+  background-color: black;
+  border-radius: 6px;
+  padding: 10px;
+  margin: 10px;
+  opacity: 0.8;
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 100vw;
+  }
+
+  .panel:nth-of-type(4),
+  .panel:nth-of-type(5) {
+    display: none;
+  }
+}
